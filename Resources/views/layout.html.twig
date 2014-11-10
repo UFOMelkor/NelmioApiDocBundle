@@ -525,7 +525,7 @@
                         headers: headers,
                         crossDomain: true,
                         beforeSend: function (xhr) {
-                            if (authentication_delivery) {
+                            if (authentication_delivery && $(self).parentsUntil("ul").find(".icon.keys").size() > 0) {
                                 var value;
 
                                 if ('http' == authentication_delivery) {
