@@ -542,7 +542,9 @@
                         headers: headers,
                         crossDomain: true,
                         beforeSend: function (xhr) {
-                            if (authentication_delivery) {
+                            if ((authentication_delivery === 'http' && $('#api_login').val().trim() !== '')
+                                || (authentication_delivery === 'header' && $('#api_key').val().trim() !== '')
+                            ) {
                                 var value;
 
                                 if ('http' == authentication_delivery) {
